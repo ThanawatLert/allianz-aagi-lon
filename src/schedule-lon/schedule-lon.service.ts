@@ -41,11 +41,19 @@ const FOLDER_TEMPLATE_NOT_USE_SMS: string[] = [
 const FOLDER_TEMPLATE_LIST: string[] = [
   'E_RENEWAL_TH',
   'E_RENEWAL_EN',
+  'health_en',
+  'health_th',
+  'non_health_en',
+  'non_health_th',
 ];
 
 const TEMPLATE_FLEX = {
   E_RENEWAL_TH: lonFlex.flex_1,
   E_RENEWAL_EN: lonFlex.flex_2,
+  health_en: lonFlex.health_en,
+  health_th: lonFlex.health_th,
+  non_health_en: lonFlex.non_health_en,
+  non_health_th: lonFlex.non_health_th,
 };
 
 @Injectable()
@@ -201,7 +209,7 @@ export class ScheduleLonService {
         status: 'sent',
         schedule_timestamp: null,
         lon_category_id: lon_category_id,
-        lon_category_name: categoryName,
+        lon_category_name: 'ServiceMaintenance',
       };
       // fetch lon api
       const headers = {
@@ -242,7 +250,7 @@ export class ScheduleLonService {
     }
   }
 
-  @Cron('*/15 9-17 * * *', {
+  @Cron('*/5 9-17 * * *', {
     timeZone: 'Asia/Bangkok',
   })
   async handleSchdule() {
