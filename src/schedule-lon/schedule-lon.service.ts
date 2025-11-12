@@ -102,6 +102,31 @@ export class ScheduleLonService {
     }
   }
 
+  async readFileCsv(filePath: string): Promise<object[]> {
+    try {
+      // Construct the absolute path (e.g., C:\myfolder\myfile.txt)
+      const cleanFilePath = filePath.replace(/^\\+/, '').replace(/\\/g, '/');
+
+      const absolutePath = path.posix.join(this.locationPath, cleanFilePath);
+      // const data = await fs.readFile(absolutePath, 'utf-8'); // Read as UTF-8
+
+      const csvData = await fs.readFile(absolutePath, 'utf8');
+
+      const workbook = xlsx.read(csvData, { type: 'string', raw: true });
+
+      const sheetName = workbook.SheetNames[0]; // Assuming data is in the first sheet
+      const worksheet = workbook.Sheets[sheetName];
+      const jsonData: object[] = xlsx.utils.sheet_to_json(worksheet, {
+        defval: '', // คงคอลัมน์ไว้ถึงแม้ค่าจะว่าง
+        blankrows: true,
+      });
+      return jsonData;
+    } catch (error) {
+      console.error('Error reading file:', error);
+      throw error; // Rethrow the error for handling in your controller
+    }
+  }
+
   async readFileBuffer(filePath: string): Promise<Buffer> {
     try {
       const absolutePath = path.join('C:\\', filePath);
@@ -209,7 +234,7 @@ export class ScheduleLonService {
         status: 'sent',
         schedule_timestamp: null,
         lon_category_id: lon_category_id,
-        lon_category_name: 'ServiceMaintenance',
+        lon_category_name: 'ServiceMaintenanceHealth',
       };
       // fetch lon api
       const headers = {
@@ -250,7 +275,7 @@ export class ScheduleLonService {
     }
   }
 
-  @Cron('*/5 9-17 * * *', {
+  @Cron('*/10 8-17 * * *', {
     timeZone: 'Asia/Bangkok',
   })
   async handleSchdule() {
@@ -280,7 +305,12 @@ export class ScheduleLonService {
         for (let i = 0; i < preRunningFileNames.length; i++) {
           const filename = preRunningFileNames[i].fileName;
           const pathFile = `\\${folder}\\${filename}`;
-          const data = await this.readFile(pathFile);
+          
+          let data;
+          if (pathFile.endsWith('.csv'))
+            data = await this.readFileCsv(pathFile);
+          else data = await this.readFile(pathFile);
+
           const [writeFileName, successList, failList] =
             await this.sendLonByFileData(
               folder,
