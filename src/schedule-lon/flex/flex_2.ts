@@ -83,7 +83,7 @@ export const flex_2 = {
         contents: [
           {
             type: "text",
-            text: "Policy Renewal Notification Service",
+            text: "Insurance Policy Renewal Notification",
             weight: "bold",
             size: "sm",
             wrap: true,
@@ -102,7 +102,7 @@ export const flex_2 = {
             contents: [
               {
                 type: "span",
-                text: "Allianz Ayudhya General Insurance would like to inform you that your voluntary motor insurance policy is about to expire. Please find the details below:",
+                text: "Allianz Ayudhya General Insurance would like to inform you that your voluntary motor insurance policy is about to expire. Please find the details below.",
                 size: "xxs",
               },
             ],
@@ -123,7 +123,7 @@ export const flex_2 = {
             contents: [
               {
                 type: "text",
-                text: "Policy No :",
+                text: "Policy No. :",
                 size: "xs",
                 color: "#aaaaaa",
                 margin: "none",
@@ -132,44 +132,6 @@ export const flex_2 = {
               {
                 type: "text",
                 text: "{value1}",
-                size: "xs",
-                flex: 5,
-              },
-            ],
-          },
-          {
-            type: "box",
-            layout: "baseline",
-            contents: [
-              {
-                type: "text",
-                text: "License Plate No :",
-                size: "xs",
-                color: "#aaaaaa",
-                flex: 4,
-              },
-              {
-                type: "text",
-                text: "{value2}",
-                size: "xs",
-                flex: 5,
-              },
-            ],
-          },
-          {
-            type: "box",
-            layout: "baseline",
-            contents: [
-              {
-                type: "text",
-                text: "Expiry Date :",
-                size: "xs",
-                color: "#aaaaaa",
-                flex: 4,
-              },
-              {
-                type: "text",
-                text: "{value3}",
                 size: "xs",
                 flex: 5,
               },
@@ -187,12 +149,13 @@ export const flex_2 = {
             contents: [
               {
                 type: "span",
-                text: "We recommend that you renew your policy as indicated in the renewal notice. For further information, please contact your insurance agent or reach our Customer Service Center at 1292.",
+                text: "We recommend that you renew your policy according to the information provided in the renewal notice. For more information, please contact your insurance agent or reach our Customer Service Center at 1292.",
                 size: "xxs",
               },
             ],
             wrap: true,
             offsetTop: "none",
+            margin: "none",
           },
         ],
         paddingTop: "md",
@@ -229,8 +192,8 @@ export const flex_2 = {
             height: "sm",
             action: {
               type: "uri",
-              label: "more information",
-              uri: "{value4}",
+              label: "More Information",
+              uri: "https://liff.line.me/2007569728-0EgyRv75/nrbSRyGtJT?page_id=1749185567517",
             },
             offsetTop: "none",
             offsetBottom: "none",

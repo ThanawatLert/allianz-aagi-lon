@@ -10,7 +10,7 @@ export const flex_1 = {
         size: "80%",
         gravity: "center",
         align: "center",
-        flex: 2
+        flex: 2,
       },
       {
         type: "text",
@@ -25,9 +25,9 @@ export const flex_1 = {
         contents: [
           {
             type: "span",
-            text: "OFFICIAL NOTIFICATION"
-          }
-        ]
+            text: "OFFICIAL NOTIFICATION",
+          },
+        ],
       },
       {
         type: "text",
@@ -42,11 +42,11 @@ export const flex_1 = {
             text: "powered by",
             style: "italic",
             size: "10px",
-            weight: "regular"
-          }
+            weight: "regular",
+          },
         ],
         wrap: true,
-        offsetTop: "0.3px"
+        offsetTop: "0.3px",
       },
       {
         type: "text",
@@ -61,17 +61,17 @@ export const flex_1 = {
             type: "span",
             text: " LINE",
             weight: "bold",
-            size: "12px"
-          }
-        ]
-      }
+            size: "12px",
+          },
+        ],
+      },
     ],
     offsetTop: "none",
     paddingAll: "none",
     paddingTop: "md",
     paddingBottom: "md",
     paddingStart: "lg",
-    paddingEnd: "lg"
+    paddingEnd: "lg",
   },
   body: {
     type: "box",
@@ -86,12 +86,12 @@ export const flex_1 = {
             text: "บริการแจ้งเตือนต่ออายุกรมธรรม์ประกันภัย",
             weight: "bold",
             size: "sm",
-            wrap: true
-          }
+            wrap: true,
+          },
         ],
         paddingTop: "none",
         offsetTop: "none",
-        offsetBottom: "none"
+        offsetBottom: "none",
       },
       {
         type: "box",
@@ -103,15 +103,15 @@ export const flex_1 = {
               {
                 type: "span",
                 text: "อลิอันซ์ อยุธยา ประกันภัย ขอเรียนให้คุณทราบว่า กรมธรรม์รถยนต์ภาคสมัครใจของคุณกำลังหมดความคุ้มครอง โดยมีรายละเอียดดังนี้",
-                size: "xxs"
-              }
+                size: "xxs",
+              },
             ],
             wrap: true,
-            offsetTop: "none"
-          }
+            offsetTop: "none",
+          },
         ],
         paddingTop: "md",
-        offsetTop: "none"
+        offsetTop: "none",
       },
       {
         type: "box",
@@ -127,56 +127,18 @@ export const flex_1 = {
                 size: "xs",
                 color: "#aaaaaa",
                 margin: "none",
-                flex: 4
+                flex: 4,
               },
               {
                 type: "text",
                 text: "{value1}",
                 size: "xs",
-                flex: 5
-              }
-            ]
-          },
-          {
-            type: "box",
-            layout: "baseline",
-            contents: [
-              {
-                type: "text",
-                text: "หมายเลขทะเบียน :",
-                size: "xs",
-                color: "#aaaaaa",
-                flex: 4
+                flex: 5,
               },
-              {
-                type: "text",
-                text: "{value2}",
-                size: "xs",
-                flex: 5
-              }
-            ]
+            ],
           },
-          {
-            type: "box",
-            layout: "baseline",
-            contents: [
-              {
-                type: "text",
-                text: "วันหมดอายุ :",
-                size: "xs",
-                color: "#aaaaaa",
-                flex: 4
-              },
-              {
-                type: "text",
-                text: "{value3}",
-                size: "xs",
-                flex: 5
-              }
-            ]
-          }
         ],
-        offsetTop: "md"
+        offsetTop: "md",
       },
       {
         type: "box",
@@ -188,15 +150,16 @@ export const flex_1 = {
               {
                 type: "span",
                 text: "เราขอแนะนำให้คุณแจ้งต่ออายุกรมธรรม์ ตามรายละเอียดในใบแจ้งเตือน สอบถามข้อมูลเพิ่มเติม สามารถติดต่อได้ที่ตัวแทนของคุณ หรือติดต่อแผนกลูกค้าสัมพันธ์ได้ที่เบอร์ 1292",
-                size: "xxs"
-              }
+                size: "xxs",
+              },
             ],
             wrap: true,
-            offsetTop: "none"
-          }
+            offsetTop: "none",
+            margin: "none",
+          },
         ],
         paddingTop: "md",
-        offsetTop: "none"
+        offsetTop: "none",
       },
       {
         type: "box",
@@ -208,15 +171,15 @@ export const flex_1 = {
               {
                 type: "span",
                 text: "อลิอันซ์ อยุธยา ประกันภัย หวังเป็นอย่างยิ่งว่าจะได้รับความไว้วางใจให้เป็นผู้คุ้มครองผลประโยชน์ของคุณ  และบุคคลที่คุณรักต่อไป",
-                size: "xxs"
-              }
+                size: "xxs",
+              },
             ],
             wrap: true,
-            offsetTop: "none"
-          }
+            offsetTop: "none",
+          },
         ],
         paddingTop: "xs",
-        offsetTop: "none"
+        offsetTop: "none",
       },
       {
         type: "box",
@@ -229,16 +192,16 @@ export const flex_1 = {
             height: "sm",
             action: {
               type: "uri",
-              label: "รายละเอียดเพิ่มเติม",
-              uri: "{value4}"
+              label: "ดูรายละเอียด",
+              uri: "https://liff.line.me/2007569728-0EgyRv75/nrbSRyGtJT?page_id=1749185567517",
             },
             offsetTop: "none",
             offsetBottom: "none",
             offsetStart: "none",
             offsetEnd: "none",
             gravity: "bottom",
-            margin: "none"
-          }
+            margin: "none",
+          },
         ],
         flex: 0,
         borderColor: "#F6F6F6",
@@ -246,14 +209,14 @@ export const flex_1 = {
         paddingBottom: "none",
         paddingTop: "lg",
         offsetTop: "none",
-        offsetStart: "none"
-      }
+        offsetStart: "none",
+      },
     ],
     paddingAll: "none",
     paddingTop: "xl",
     paddingBottom: "lg",
     paddingStart: "xxl",
-    paddingEnd: "xxl"
+    paddingEnd: "xxl",
   },
   footer: {
     type: "box",
@@ -265,24 +228,24 @@ export const flex_1 = {
           {
             type: "span",
             text: "Learn more about LINE Official Notification ",
-            color: "#BDBDBD"
+            color: "#BDBDBD",
           },
           {
             type: "span",
             text: "here",
             decoration: "underline",
-            color: "#00b4ff"
+            color: "#00b4ff",
           },
           {
             type: "span",
             text: ".",
-            color: "#BDBDBD"
-          }
+            color: "#BDBDBD",
+          },
         ],
         wrap: true,
         size: "10px",
-        align: "center"
-      }
+        align: "center",
+      },
     ],
     margin: "none",
     borderWidth: "none",
@@ -291,15 +254,15 @@ export const flex_1 = {
     action: {
       type: "uri",
       label: "action",
-      uri: "https://today.line.me/th/v2/article/PGjoaWV"
-    }
+      uri: "https://today.line.me/th/v2/article/PGjoaWV",
+    },
   },
   styles: {
     header: {
-      backgroundColor: "#06C755"
+      backgroundColor: "#06C755",
     },
     footer: {
-      backgroundColor: "#EEEEEE"
-    }
-  }
+      backgroundColor: "#EEEEEE",
+    },
+  },
 };
