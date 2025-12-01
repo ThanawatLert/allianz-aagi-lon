@@ -286,7 +286,7 @@ export class ScheduleLonService {
     }
   }
 
-  @Cron('*/1 8-23 * * *', {
+  @Cron('*/15 8-17 * * *', {
     timeZone: 'Asia/Bangkok',
   })
   async handleSchdule() {
