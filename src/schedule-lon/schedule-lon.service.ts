@@ -9,6 +9,7 @@ import xlsx from 'xlsx';
 import { v4 as uuidv4 } from 'uuid';
 import * as lonFlex from './flex';
 import { HttpsProxyAgent } from 'https-proxy-agent';
+import type { AxiosRequestConfig } from "axios";
 
 interface IFileData {
   MobileNo: string;
@@ -61,7 +62,7 @@ const TEMPLATE_FLEX = {
 export class ScheduleLonService {
   private locationPath = baseConfig().location_path;
   private lonApiUrl = baseConfig().lon_api_url;
-  private https_proxy = baseConfig().https_proxy;
+  private https_proxy = baseConfig().https_proxy?.trim();
   private lonApiToken = baseConfig().lon_api_token;
   private pageId = baseConfig().page_id;
 
@@ -243,17 +244,19 @@ export class ScheduleLonService {
         Authorization: `BEARER ${this.lonApiToken}`,
       };
       const apiUrl = `${this.lonApiUrl}/${this.pageId}/public/broadcast`;
-      const agent = new HttpsProxyAgent(this.https_proxy);
+      const options: AxiosRequestConfig = {
+        headers,
+        proxy: false,
+      };
+      if (this.https_proxy && this.https_proxy.startsWith("http")) {
+        options.httpsAgent = new HttpsProxyAgent(this.https_proxy);
+      }
       try {
         // console.log(apiUrl, { headers });
         // console.log(JSON.stringify(body));
 
         //await axios.post(apiUrl, body, { headers });
-        await axios.post(apiUrl, body, {
-          headers,
-          httpsAgent: agent, 
-          proxy: false,    
-        });
+        await axios.post(apiUrl, body, options);
         console.log(`send : ${i + 1}/${batchSize}`);
         successList.push(...batchData);
       } catch (error) {
@@ -283,7 +286,7 @@ export class ScheduleLonService {
     }
   }
 
-  @Cron('*/10 8-17 * * *', {
+  @Cron('*/1 8-23 * * *', {
     timeZone: 'Asia/Bangkok',
   })
   async handleSchdule() {
