@@ -60,6 +60,7 @@ const TEMPLATE_FLEX = {
 export class ScheduleLonService {
   private locationPath = baseConfig().location_path;
   private lonApiUrl = baseConfig().lon_api_url;
+  private https_proxy = baseConfig().https_proxy;
   private lonApiToken = baseConfig().lon_api_token;
   private pageId = baseConfig().page_id;
 
@@ -241,11 +242,17 @@ export class ScheduleLonService {
         Authorization: `BEARER ${this.lonApiToken}`,
       };
       const apiUrl = `${this.lonApiUrl}/${this.pageId}/public/broadcast`;
+      const agent = new HttpsProxyAgent(this.https_proxy);
       try {
         // console.log(apiUrl, { headers });
         // console.log(JSON.stringify(body));
 
         await axios.post(apiUrl, body, { headers });
+        await axios.post(apiUrl, body, {
+          headers,
+          httpsAgent: agent, 
+          proxy: false,    
+        });
         console.log(`send : ${i + 1}/${batchSize}`);
         successList.push(...batchData);
       } catch (error) {
