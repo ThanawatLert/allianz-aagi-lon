@@ -36,17 +36,11 @@ interface IFileData {
 }
 
 const FOLDER_TEMPLATE_NOT_USE_SMS: string[] = [
-  'E_RENEWAL_TH',
-  'E_RENEWAL_EN',
 ];
 
 const FOLDER_TEMPLATE_LIST: string[] = [
   'E_RENEWAL_TH',
   'E_RENEWAL_EN',
-  'health_en',
-  'health_th',
-  'non_health_en',
-  'non_health_th',
 ];
 
 const TEMPLATE_FLEX = {
