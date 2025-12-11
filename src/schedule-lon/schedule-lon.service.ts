@@ -231,7 +231,7 @@ export class ScheduleLonService {
         status: 'sent',
         schedule_timestamp: null,
         lon_category_id: lon_category_id,
-        lon_category_name: 'ServiceMaintenanceHealth',
+        lon_category_name: categoryName,
       };
       // fetch lon api
       const headers = {
